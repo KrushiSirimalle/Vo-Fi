@@ -1,0 +1,56 @@
+/* styles.css */
+
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: DodgerBlue;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  header h2 {
+    margin-bottom: 10px;
+  }
+  
+  header a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  header a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main content styles */
+  .jumbotron {
+    background-color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .container h4 {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  
+  /* Additional content styles */
+  h6 {
+    justify-content: center;
+    padding: 20px;
+  }
+  
