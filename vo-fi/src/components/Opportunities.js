@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Opportunities.css';
+import NavBar from './NavBar';
 
 const OpportunityPage = () => {
   const [area, setArea] = useState({
@@ -22,6 +23,8 @@ const OpportunityPage = () => {
   };
 
   return (
+    <>
+    <NavBar/>
     <div>
       <h2>Opportunity Page</h2>
       <div>
@@ -81,6 +84,7 @@ const OpportunityPage = () => {
         />
       </div>
     </div>
+    </>
   );
 };
 

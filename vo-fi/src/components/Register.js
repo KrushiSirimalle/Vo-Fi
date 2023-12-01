@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './Register.css';
+import NavBar from './NavBar';
+
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -24,6 +26,8 @@ const Register = () => {
   };
 
   return (
+    <>
+    <NavBar/>
     <form onSubmit={handleSubmit}>
       <div>
         <label htmlFor="firstName">First Name</label>
@@ -97,6 +101,7 @@ const Register = () => {
       </div>
       <button type="submit">Register</button>
     </form>
+    </>
   );
 };
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';
+import NavBar from './NavBar';
 
 const Login = () => {
   const [username, setUsername] = useState('');
@@ -27,6 +28,8 @@ const Login = () => {
   };
 
   return (
+    <>
+    <NavBar/>
     <form onSubmit={handleSubmit}>
       <div className="mb-3">
         <label htmlFor="username">Username</label>
@@ -57,6 +60,7 @@ const Login = () => {
       </div>
       <button type="submit" class="btn btn-primary">Login</button>
     </form>
+    </>
   );
 };
 
