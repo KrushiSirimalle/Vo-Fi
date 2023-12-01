@@ -1,9 +1,12 @@
 // AboutUs.js
 import React from 'react';
 import './About.css';
+import NavBar from './NavBar';
 
 const AboutUs = () => {
   return (
+    <>
+    <NavBar/>
     <div className="container-fluid">
       <h2>About Us</h2>
       <p>
@@ -40,6 +43,8 @@ const AboutUs = () => {
         <li>Teamwork</li>
       </ul>
     </div>
+    </>
+
   );
 };
 

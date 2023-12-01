@@ -1,5 +1,6 @@
 import React from 'react';
 import './Home.css';
+import NavBar from './NavBar';
 
 const Home = () => {
     const myStyle = {
@@ -14,6 +15,9 @@ const Home = () => {
         justifyContent: "center"
       }
   return (
+    <>
+   
+    <NavBar/>
     <div>
       <head>This is Home Page
         <>find a valunteer</>
@@ -44,7 +48,7 @@ const Home = () => {
       }
 
     </div>
-    
+    </>
   );
 };
 

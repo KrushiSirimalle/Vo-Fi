@@ -1,8 +1,11 @@
 // Complaint.js
 import React from 'react';
 import './Complaint.css';
+import NavBar from './NavBar';
 const Complaint = () => {
   return (
+    <>
+    <NavBar/>
     <div className="container mt-5">
       <h2>File a Complaint</h2>
       <p>
@@ -36,6 +39,8 @@ const Complaint = () => {
         </button>
       </form>
     </div>
+    </>
+
   );
 };
 
