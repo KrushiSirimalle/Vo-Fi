@@ -2,18 +2,22 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Home from './components/Home';
 import Login from './components/Login';
-import Contact from './components/Contact';
 import Complaint from './components/Complaint';
 import Opportunities from './components/Opportunities';
-import About from './components/About';
-import Register from './components/Register';
 import Experience from './components/Experience';
+import Contact from './components/Contact';
+import Register from './components/Register';
+import Profile from './components/Profile';
+import Open from './components/Open'; 
+import About from './components/About';
 
 const App = () => {
   return (
     <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/Open" element={<Open />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Profile" element={<Profile />} />
           <Route path="/Login" element={<Login />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/About" element={<About />} />
