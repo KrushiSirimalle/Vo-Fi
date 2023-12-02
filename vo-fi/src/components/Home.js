@@ -27,13 +27,14 @@ const Home = () => {
       <>
       <header style={myStyle}>
         <h2>FIND A VOLUNTEER</h2>
-        <p>work of humanity</p>
+         <p>work of humanity</p>
       </header>
       <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h4 style={{ textAlign: 'justify' }}>
-            Volunteering is an act of selfless service where individuals contribute their time, skills, and resources towards making a positive impact in their communities or in society as a whole. It is a powerful tool for effecting change, promoting social justice, and building stronger, more connected communities
-          </h4>
+        <div class="row">
+        <div class="col-sm-4"><img src="./images/food.jpg" alt="Website Logo" style={{height:'200px', weight:'200px', padding:'10px', borderRadius:'10' }}></img></div>
+          <div class="col-sm-4"><h5  class="jumbotron jumbotron-fluid"style={{ textAlign: 'justify', backgroundColor:'white', color:'black', margin:'5px', padding:'10px', borderRadius: '10px' }}>Volunteering is an act of selfless service where individuals contribute their time, skills, and resources towards making a positive impact in their communities or in society as a whole. It is a powerful tool for effecting change, promoting social justice, and building stronger, more connected communities</h5></div>
+          <div class="col-sm-4"><img src="./images/don.jpg" alt="Website Logo" style={{height:'200px', weight:'200px',padding:'10px', borderRadius:'10px' }}></img></div>
+          
         </div>
       </div>
       <div>
