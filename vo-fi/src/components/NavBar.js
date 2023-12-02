@@ -17,9 +17,6 @@ const NavBar=()=> {
             <Link to="/Login" class="nav-link">Login</Link>
           </li>
           <li class="nav-item">
-            <Link to="/Contact" class="nav-link">Contact</Link>
-          </li>
-          <li class="nav-item">
             <Link to="/Complaint" class="nav-link">Complaint</Link>
           </li>
           <li class="nav-item">
@@ -30,6 +27,9 @@ const NavBar=()=> {
           </li>
           <li class="nav-item">
           <Link to="/Profile" class="nav-link">Profile</Link>
+          </li>
+          <li class="nav-item">
+            <Link to="/Contact" class="nav-link">Contact</Link>
           </li>
           <li class="nav-item">
             <Link to="/About" class="nav-link">About</Link>
