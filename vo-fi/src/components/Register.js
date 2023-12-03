@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './Register.css';
 import NavBar from './NavBar';
 
-
 const Register = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -19,10 +18,34 @@ const Register = () => {
     setFormData({ ...formData, [name]: value });
   };
 
+  
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Perform registration logic here
-    console.log('Form data:', formData);
+    
+    fetch('/api-v1/auth/registerUser', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Registration failed');
+        }
+      })
+      .then((data) => {
+        console.log('Registration successful:', data);
+        // Optionally, you can redirect the user or perform other actions upon successful registration
+      })
+      .catch((error) => {
+        console.error('Error registering:', error.message);
+      });
+    
   };
 
   return (
