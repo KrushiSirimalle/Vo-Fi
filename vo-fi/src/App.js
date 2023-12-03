@@ -13,6 +13,7 @@ import About from './components/About';
 
 const App = () => {
   return (
+    
     <Router>
         <Routes>
           <Route path="/" element={<Open />} />
