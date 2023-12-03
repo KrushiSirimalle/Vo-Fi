@@ -1,32 +1,45 @@
-import User from "../models/User.js";
+import Users from "../models/userModel.js";
 
-export const register = async (req, res, next) => {
-  const { username, email, password } = req.body;
+export const registerUser = async (req, res, next) => {
+  const { firstName, lastName, username, email, createPassword, confirmPassword } = req.body;
 
   //validate fileds
 
+  if (!firstName) {
+    next("First Name is required");
+  }
+  if (!lastName) {
+    next("Last Name is required");
+  }
   if (!username) {
     next("username is required");
   }
   if (!email) {
     next("Email is required");
   }
-  if (!password) {
+  
+  if (!createPassword) {
+    next("Password is required");
+  }
+  if (!confirmPassword) {
     next("Password is required");
   }
 
   try {
-    const userExist = await User.findOne({ email });
+    const userExist = await Users.findOne({ email });
 
     if (userExist) {
       next("Email Address already exists");
       return;
     }
 
-    const user = await User.create({
+    const user = await Users.create({
+      firstName,
+      lastName,
       username,
       email,
-      password,
+      createPassword,
+      confirmPassword,
     });
 
     // user token
@@ -37,9 +50,10 @@ export const register = async (req, res, next) => {
       message: "Account created successfully",
       user: {
         _id: user._id,
-        username: user.username,
+        firstName: user.firstName,
+        lastName: user.lastName,
         email: user.email,
-       
+        accountType: user.accountType,
       },
       token,
     });
@@ -49,7 +63,7 @@ export const register = async (req, res, next) => {
   }
 };
 
-export const Login = async (req, res, next) => {
+export const signIn = async (req, res, next) => {
   const { email, password } = req.body;
 
   try {
@@ -60,7 +74,7 @@ export const Login = async (req, res, next) => {
     }
 
     // find user by email
-    const user = await User.findOne({ email }).select("+password");
+    const user = await Users.findOne({ email }).select("+password");
 
     if (!user) {
       next("Invalid -email or password");

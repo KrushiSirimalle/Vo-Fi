@@ -7,7 +7,7 @@ import bodyParser from "body-parser";
 import xss from "xss-clean";
 import mongoSanitize from "express-mongo-sanitize";
 import dbconnection from "./dbconfig/dbconnection.js";
-import router from "./routes/authRoutes.js";
+import router from "./routes/index.js";
 
 const app=express()
 
@@ -26,7 +26,7 @@ app.use(express.json({limit: "10mb"}));
 app.use(express.urlencoded({extended: true}));
 app.use(morgan("dev"));
 
-app.use(router)
+app.use(router);
 
 app.listen(PORT, () => {
     console.log(`Dev Server running on port: ${PORT}`);
