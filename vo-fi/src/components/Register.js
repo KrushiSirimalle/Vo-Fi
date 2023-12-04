@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Register.css';
 import NavBar from './NavBar';
+import axios from 'axios';
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -9,7 +10,7 @@ const Register = () => {
     username: '',
     dob: '',
     email: '',
-    password: '',
+    createPassword: '',
     confirmPassword: '',
   });
 
@@ -20,35 +21,30 @@ const Register = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    
-    fetch('/api-v1/auth/registerUser', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
+    console.log(formData);
+    axios.post('http://localhost:8800/api-v1/auth/registerUser', formData)
       .then((response) => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error('Registration failed');
-        }
-      })
-      .then((data) => {
-        console.log('Registration successful:', data);
+        console.log('Registration successful:', response.data);
+        setFormData({
+          firstName: '',
+          lastName: '',
+          username: '',
+          dob: '',
+          email: '',
+          createPassword: '',
+          confirmPassword: '',
+        })
         // Optionally, you can redirect the user or perform other actions upon successful registration
       })
       .catch((error) => {
         console.error('Error registering:', error.message);
       });
-    
   };
 
   return (
     <>
     <NavBar/>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} class='form-container'>
       <div>
         <label htmlFor="firstName">First Name</label>
         <input
@@ -103,9 +99,9 @@ const Register = () => {
         <label htmlFor="password">Create Password</label>
         <input
           type="password"
-          id="password"
-          name="password"
-          value={formData.password}
+          id="createPassword"
+          name="createPassword"
+          value={formData.createPassword}
           onChange={handleChange}
         />
       </div>

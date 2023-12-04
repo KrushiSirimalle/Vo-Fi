@@ -1,10 +1,10 @@
 import Register from "../models/Registermodel.js";
 
 export const register = async (req, res) => {
-  const { firstName, lastName, email, createPassword, confirmPassword, dateOfBirth, username } = req.body;
+  const { firstName, lastName, username, dateOfBirth, email, createPassword, confirmPassword  } = req.body;
 
   // Validate fields
-  if (!firstName || !lastName || !email || !createPassword || !confirmPassword || !dateOfBirth || !username) {
+  if (!firstName || !lastName || !username || !dateOfBirth ||!email  || !createPassword || !confirmPassword) {
     return res.status(400).json({ message: "All fields are required" });
   }
 
@@ -22,10 +22,11 @@ export const register = async (req, res) => {
     const user = await Register.create({
       firstName,
       lastName,
+      username,
+      dateOfBirth,
       email,
       createPassword,
-      dateOfBirth,
-      username,
+      confirmPassword,  
     });
 
     // Generate user token

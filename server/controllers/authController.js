@@ -1,7 +1,7 @@
 import Users from "../models/userModel.js";
 
 export const registerUser = async (req, res, next) => {
-  const { firstName, lastName, username, email, createPassword, confirmPassword } = req.body;
+  const { firstName, lastName, username, dob,  email, createPassword, confirmPassword } = req.body;
 
   //validate fileds
 
