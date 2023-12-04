@@ -18,9 +18,6 @@ const Register = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  
-
-
   const handleSubmit = (event) => {
     event.preventDefault();
     

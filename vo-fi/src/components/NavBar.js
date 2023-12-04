@@ -5,7 +5,7 @@ const NavBar=()=> {
     <div class="container-fluid">
     <ul class = "navbar-nav">
       <li>
-            <Link to="/Open" class="nav-brand"><img src="./images/VF.png" alt="Website Logo" style={{height:'42px', weight:'42px'}}></img></Link>
+            <Link to="/Home" class="nav-brand"><img src="./images/VF.png" alt="Website Logo" style={{height:'42px', weight:'42px'}}></img></Link>
       </li>
           <li class="nav-item">
             <Link to="/Home" class="nav-link">Home</Link>

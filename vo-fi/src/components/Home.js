@@ -27,7 +27,7 @@ const Home = () => {
       <>
       <header style={myStyle}>
         <h2>FIND A VOLUNTEER</h2>
-         <p>work of humanity</p>
+         <h3>work of humanity</h3>
       </header>
       <div class="jumbotron jumbotron-fluid">
         <div class="row">
