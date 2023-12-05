@@ -1,4 +1,5 @@
 import Users from "../models/userModel.js";
+//import bcrypt from "bcrypt";
 
 export const registerUser = async (req, res, next) => {
   const { firstName, lastName, username, dob,  email, createPassword, confirmPassword } = req.body;
@@ -13,6 +14,9 @@ export const registerUser = async (req, res, next) => {
   }
   if (!username) {
     next("username is required");
+  }
+  if (!dob) {
+    next("Date of Birth is required");
   }
   if (!email) {
     next("Email is required");
@@ -69,7 +73,7 @@ export const signIn = async (req, res, next) => {
   try {
     //validation
     if (!email || !password) {
-      next("Please Provide AUser Credentials");
+      next("Please Provide User Credentials");
       return;
     }
 

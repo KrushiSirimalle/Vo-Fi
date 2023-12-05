@@ -1,82 +1,38 @@
-/* styles.css */
+/* Opportunities.css */
 
-/* Basic reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Container for the Opportunity Page */
+.opportunity-container {
+  padding: 20px;
+}
+
+/* Style for the labels */
+label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Style for the select elements */
+select,
+input[type='text'] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+/* Optional: Style for the h2 heading */
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Optional: Adjust the width of the form elements on larger screens */
+@media (min-width: 768px) {
+  select,
+  input[type='text'] {
+    width: calc(50% - 10px); /* Adjust according to your layout */
+    margin-right: 10px;
+    display: inline-block;
   }
-  
-  /* Body styles (optional) */
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  /* Container styles */
-  .container {
-    width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Label styles */
-  label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #333;
-  }
-  
-  /* Select and Dropdown styles */
-  .select-container {
-    margin-bottom: 16px;
-  }
-  
-  /* Dropdown button styles */
-  .dropdown-button {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    color: #333;
-    cursor: pointer;
-  }
-  
-  /* Dropdown panel styles */
-  .dropdown-panel {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    max-height: 200px;
-    overflow-y: auto;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Dropdown item styles */
-  .dropdown-item {
-    padding: 8px 12px;
-    cursor: pointer;
-  }
-  
-  /* Dropdown item hover styles */
-  .dropdown-item:hover {
-    background-color: #f0f0f0;
-  }
-  
+}
